@@ -16,13 +16,15 @@ public class CheckGoogleHomeLinks {
 		// TODO Auto-generated method stub
 
 		System.setProperty(driverType, pathToDriver);
+		
 		driver = new ChromeDriver();
 		driver.get("https://google.com");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 		List<WebElement> links = driver.findElements(By.tagName("a"));
+		//Print number of found links from a page
 		System.out.println(links.size());
-
+		//taking names of links 
 		for (WebElement e : links) {
 			String checkLinkName = e.getText();
 			System.out.println(checkLinkName);
